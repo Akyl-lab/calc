@@ -1,26 +1,20 @@
-function plus() {
-	var num1, num2, result;
-	num1 = document.getElementById('n1').value;
-	num1 = parseInt(num1); //обрежет до целого число
-
-	num2 = document.getElementById('n2').value;
-	num2 = parseInt(num2);
-
-	result = num1+num2;
-	//InnerHTML вывод содержимого
-	document.getElementById('out').innerHTML = result;
+function insert(num) {
+	document.form.textview.value =
+	document.form.textview.value + num;
 }
 
+function clean() {
+	document.form.textview.value = "";
+}
 
-function minus() {
-	var num1, num2, result;
-	num1 = document.getElementById('n1').value;
-	num1 = parseInt(num1); //обрежет до целого число
+function back() {
+	let exp = document.form.textview.value;
+	document.form.textview.value = exp.substring(0, exp.length-1);
+}
 
-	num2 = document.getElementById('n2').value;
-	num2 = parseInt(num2);
-
-	result = num1-num2;
-	//InnerHTML вывод содержимого
-	document.getElementById('out').innerHTML = result;
+function equal() {
+	var exp = document.form.textview.value;
+	if(exp) {
+		document.form.textview.value = eval(exp);
+	}
 }
